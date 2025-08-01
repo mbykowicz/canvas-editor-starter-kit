@@ -37,6 +37,10 @@ export default function useCanvas({ draw }: Props) {
     }
 
     render(canvas, ctx)
+
+    return () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId)
+    }
   }, [draw])
 
   return {
