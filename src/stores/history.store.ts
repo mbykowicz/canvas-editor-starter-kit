@@ -1,5 +1,9 @@
 import { create } from 'zustand'
-import Command from '../commands/command'
+
+type Command = {
+  execute: () => void
+  undo: () => void
+}
 
 interface State {
   history: Command[]
